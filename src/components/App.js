@@ -1,6 +1,10 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import callToApi from '../services/api';
+import Header from './Header';
+import Main from './Main';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
   //States
@@ -12,9 +16,19 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
-      <h1>Hola mundo</h1>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path='/'
+          element={<Main charactersData={charactersData} />}
+        ></Route>
+        <Route
+          path='/characters/:characterId'
+          element={<CharacterDetail />}
+        ></Route>
+      </Routes>
+    </>
   );
 }
 

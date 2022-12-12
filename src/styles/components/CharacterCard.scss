@@ -1,0 +1,30 @@
+@import '../core/functions';
+@import '../core/variables';
+
+.character {
+  &__card {
+    width: 250px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    gap: 13px;
+    background-color: rgb(19, 181, 213);
+    color: white;
+    font-size: rem(19);
+  }
+  &__img {
+    width: 100%;
+    height: 250px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &__name {
+    margin-left: 20px;
+    font-weight: 800;
+  }
+  &__species {
+    margin-left: 20px;
+    padding-bottom: 10px;
+  }
+}

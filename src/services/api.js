@@ -4,9 +4,13 @@ const callToApi = () => {
     .then((data) => {
       const characters = data.results.map((eachCharacter) => {
         const character = {
+          id: eachCharacter.id,
           img: eachCharacter.image,
           name: eachCharacter.name,
           species: eachCharacter.species,
+          status: eachCharacter.status,
+          origin: eachCharacter.origin.name,
+          episodes: eachCharacter.episode.length,
         };
         return character;
       });
