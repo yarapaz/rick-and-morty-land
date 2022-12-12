@@ -1,15 +1,16 @@
 const callToApi = () => {
-  return fetch('https://swapi.dev/api/people/5')
+  return fetch('https://rickandmortyapi.com/api/character')
     .then((response) => response.json())
-    .then((response) => {
-      const result = {
-        name: response.name,
-        birthYear: response.birth_year,
-        height: response.height,
-        mass: response.mass,
-        eyeColor: response.eye_color,
-      };
-      return result;
+    .then((data) => {
+      const characters = data.results.map((eachCharacter) => {
+        const character = {
+          img: eachCharacter.image,
+          name: eachCharacter.name,
+          species: eachCharacter.species,
+        };
+        return character;
+      });
+      return characters;
     });
 };
 
