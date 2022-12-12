@@ -1,7 +1,9 @@
 import '../styles/components/FilterByName.scss';
 
-function FilterByName({}) {
-  const handleName = (ev) => {};
+function FilterByName(props) {
+  const handleName = (ev) => {
+    props.handleFilterName(ev.target.value);
+  };
 
   return (
     <>
@@ -11,6 +13,7 @@ function FilterByName({}) {
         name='name'
         id='name'
         className='name__input'
+        value={props.nameFilter}
         onChange={handleName}
       />
     </>

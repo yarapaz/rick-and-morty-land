@@ -1,0 +1,60 @@
+@import '../core/functions';
+@import '../core/variables';
+
+.character_detail {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(19, 181, 213);
+    width: 800px;
+    height: 400px;
+    padding-left: 40px;
+  }
+  &__link {
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: rem(25);
+    position: relative;
+    left: 19%;
+    margin-bottom: 20px;
+  }
+  &__img {
+    width: 320px;
+    height: 320px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__box {
+    margin-left: 40px;
+  }
+  &__name {
+    color: white;
+    font-size: rem(24);
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  &__info {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 7px;
+    color: white;
+    font-size: rem(17);
+  }
+  &__title {
+    font-weight: 800;
+  }
+}
+
+.fa-angle-left {
+  font-size: rem(18);
+  transform: scale(0.8);
+}

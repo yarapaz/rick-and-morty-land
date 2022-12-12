@@ -1,3 +1,6 @@
+@import '../core/functions';
+@import '../core/variables';
+
 .characters {
   background-color: black;
   &__list {

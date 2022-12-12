@@ -15,7 +15,8 @@ const callToApi = () => {
         return character;
       });
       return characters;
-    });
+    })
+    .catch((error) => console.log(`Ha sucedido un error: ${error}`));
 };
 
 export default callToApi;
