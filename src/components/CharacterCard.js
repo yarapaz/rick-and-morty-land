@@ -19,7 +19,7 @@ function CharacterCard({ eachCharacter }) {
   );
 }
 
-CharacterCard.propTypes = {
+CharacterCard.propypes = {
   eachCharacter: PropTypes.object,
 };
 
