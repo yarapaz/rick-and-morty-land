@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function FilterByName(props) {
   const handleName = (ev) => {
-    props.handleFilterName(ev.target.value);
+    props.handleFilterName(ev.target.value, ev.target.name);
   };
 
   return (
-    <fieldset>
+    <fieldset className='name'>
       <legend hidden></legend>
       <label className='name__label' htmlFor='name'>
         Name

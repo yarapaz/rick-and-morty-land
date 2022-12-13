@@ -1,9 +1,9 @@
-import '../styles/components/FilterBySpecies.scss';
+import '../styles/components/FilterByStatus.scss';
 import PropTypes from 'prop-types';
 
 function FilterByStatus(props) {
   const handleStatus = (ev) => {
-    props.handleFilterStatus(ev.target.value);
+    props.handleFilterStatus(ev.target.value, ev.target.name);
   };
 
   const renderStatusOptions = () => {
@@ -27,7 +27,13 @@ function FilterByStatus(props) {
   return (
     <fieldset className='status'>
       <legend hidden></legend>
-      <select name='' id='' value={props.statusFilter} onChange={handleStatus}>
+      <select
+        className='status__select'
+        name='status'
+        id='status'
+        value={props.statusFilter}
+        onChange={handleStatus}
+      >
         <option value='all'>Select a status</option>
         {renderStatusOptions()}
       </select>

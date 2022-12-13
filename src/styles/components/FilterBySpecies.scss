@@ -5,18 +5,20 @@
 .species {
   width: 200px;
   height: 30px;
-  margin-top: 1px;
-  margin-left: 10px;
-  border: 2px dotted rgba(19, 181, 213, 0.8);
+  margin-top: 75px;
+  margin-left: 20px;
+  border: 2px dotted $main-color;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3px;
   &__label {
-    color: white;
+    color: $secondary-color;
     font-size: rem(18);
     padding: 10px;
   }
   &__checkbox {
+    accent-color: $main-color;
     cursor: pointer;
   }
 }

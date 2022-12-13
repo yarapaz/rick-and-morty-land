@@ -1,6 +1,6 @@
 const get = (key, defaultValue) => {
   const localStorageData = localStorage.getItem(key);
-  if (localStorageData === 'undefined') {
+  if (localStorageData === null) {
     return defaultValue;
   } else {
     return JSON.parse(localStorageData);

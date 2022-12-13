@@ -7,7 +7,6 @@ import NotFoundCharacter from './NotFoundCharacter';
 function CharacterDetail({ handleFoundCharacter }) {
   const params = useParams();
   const foundCharacter = handleFoundCharacter(params.characterId);
-  console.log(foundCharacter);
 
   const species = () => {
     if (foundCharacter.species === 'Human') {

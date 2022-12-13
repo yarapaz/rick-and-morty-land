@@ -1,9 +1,11 @@
-@import '../core/mixins.scss';
+@import './mixins.scss';
+@import './functions.scss';
+@import './variables.scss';
 
 .main {
   width: 100%;
   min-height: 100vh;
-  background-color: black;
+  background-color: $background-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,10 +13,17 @@
 }
 
 .form {
-  background-color: black;
-  border: 3px outset rgba(19, 181, 213, 0.7);
+  background-color: $background-color;
+  border: 3px outset $main-color;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 62%;
+  font-size: rem(18);
+  padding: 20px;
+  margin-top: 15px;
+  &__box {
+    display: flex;
+  }
 }

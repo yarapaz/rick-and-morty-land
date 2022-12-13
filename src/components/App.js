@@ -6,13 +6,29 @@ import Header from './Header';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import ls from '../services/localStorage';
 
 function App() {
+  //Local Storage
+  const lsInfo = ls.get('savedFilters', {
+    name: '',
+    species: '',
+    status: '',
+    origin: [],
+  });
+
   //States
   const [charactersData, setCharactersData] = useState([]);
-  const [nameFilter, setNameFilter] = useState('');
-  const [speciesFilter, setSpeciesFilter] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
+  const [nameFilter, setNameFilter] = useState(lsInfo.name);
+  const [speciesFilter, setSpeciesFilter] = useState(lsInfo.species);
+  const [statusFilter, setStatusFilter] = useState(lsInfo.status);
+  const [originFilter, setOriginFilter] = useState(lsInfo.origin);
+  const [savedData, setSavedData] = useState({
+    name: '',
+    species: '',
+    status: '',
+    origin: [],
+  });
 
   //Effects
   useEffect(() => {
@@ -20,22 +36,56 @@ function App() {
   }, []);
 
   //Handlers
-  const handleFilterName = (name) => {
+  const handleFilterName = (name, input) => {
     setNameFilter(name);
+    setSavedData({ ...savedData, [input]: name });
+    ls.set('savedFilters', { ...savedData, [input]: name });
   };
 
-  const handleFilterSpecies = (species) => {
+  const handleFilterSpecies = (species, input) => {
     setSpeciesFilter(species);
+    setSavedData({ ...savedData, [input]: species });
+    ls.set('savedFilters', { ...savedData, [input]: species });
   };
 
-  const handleFilterStatus = (status) => {
+  const handleFilterStatus = (status, input) => {
     setStatusFilter(status);
+    setSavedData({ ...savedData, [input]: status });
+    ls.set('savedFilters', { ...savedData, [input]: status });
+  };
+
+  const handleFilterOrigin = (origin) => {
+    if (!originFilter.includes(origin)) {
+      originFilter.push(origin);
+      setOriginFilter([...originFilter]);
+
+      savedData.origin.push(origin);
+      setSavedData({ ...savedData });
+      ls.set('savedFilters', { ...savedData });
+    } else {
+      const originIndex = originFilter.indexOf(origin);
+      originFilter.splice(originIndex, 1);
+      setOriginFilter([...originFilter]);
+
+      const storedOriginIndex = savedData.origin.indexOf(origin);
+      savedData.origin.splice(storedOriginIndex, 1);
+      setSavedData({ ...savedData });
+      ls.set('savedFilters', { ...savedData });
+    }
   };
 
   const handleFoundCharacter = (id) => {
     return charactersData.find(
       (eachCharacter) => eachCharacter.id === parseInt(id)
     );
+  };
+
+  const handleReset = () => {
+    ls.clear();
+    setNameFilter('');
+    setSpeciesFilter('');
+    setStatusFilter('all');
+    setOriginFilter([]);
   };
 
   const getFilteredCharacters = () => {
@@ -55,6 +105,13 @@ function App() {
           return eachCharacter.status
             .toLowerCase()
             .includes(statusFilter.toLowerCase());
+        }
+      })
+      .filter((eachCharacter) => {
+        if (originFilter.length === 0) {
+          return true;
+        } else {
+          return originFilter.includes(eachCharacter.origin);
         }
       });
   };
@@ -76,6 +133,9 @@ function App() {
                   charactersData={charactersData}
                   handleFilterStatus={handleFilterStatus}
                   statusFilter={statusFilter}
+                  handleFilterOrigin={handleFilterOrigin}
+                  originFilter={originFilter}
+                  handleReset={handleReset}
                 />
                 <CharacterList getFilteredCharacters={getFilteredCharacters} />
               </>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function FilterBySpecies(props) {
   const handleSpecies = (ev) => {
-    props.handleFilterSpecies(ev.target.name);
+    props.handleFilterSpecies(ev.target.value, ev.target.name);
   };
 
   return (
@@ -12,8 +12,9 @@ function FilterBySpecies(props) {
       <input
         className='species__checkbox'
         type='radio'
-        name='human'
+        name='species'
         id='human'
+        value='human'
         onChange={handleSpecies}
         checked={props.speciesFilter === 'human'}
       />
@@ -23,8 +24,9 @@ function FilterBySpecies(props) {
       <input
         className='species__checkbox'
         type='radio'
-        name='alien'
+        name='species'
         id='alien'
+        value='alien'
         onChange={handleSpecies}
         checked={props.speciesFilter === 'alien'}
       />

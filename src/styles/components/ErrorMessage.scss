@@ -17,20 +17,20 @@
     font-size: rem(25);
   }
   &__message {
-    color: white;
+    color: $secondary-color;
     text-align: center;
     padding-top: 50px;
   }
   &__link {
     align-items: center;
     text-decoration: none;
-    color: white;
-    background-color: rgb(19, 181, 213);
+    color: $secondary-color;
+    background-color: $main-color;
     width: 200px;
     padding: 5px;
     border-radius: 5px;
     &:hover {
-      background-color: rgb(89, 209, 233);
+      background-color: $main-color;
     }
     @include tablet {
       width: 250px;

@@ -1,0 +1,21 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.origin {
+  &__box {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 10px 10px 10px 35px;
+    gap: 10px;
+  }
+  &__label {
+    color: $secondary-color;
+    width: 100px;
+    margin-left: 5px;
+  }
+  &__checkbox {
+    accent-color: $main-color;
+    cursor: pointer;
+  }
+}

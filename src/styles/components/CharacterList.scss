@@ -3,7 +3,7 @@
 @import '../core/mixins';
 
 .characters {
-  background-color: black;
+  background-color: $background-color;
   &__list {
     display: grid;
     grid-template-columns: auto auto;
