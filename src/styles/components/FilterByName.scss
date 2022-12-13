@@ -3,28 +3,50 @@
 @import '../core/mixins';
 
 .name {
-  margin-top: 55px;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  @include desktop {
+    margin-top: 56px;
+    flex-direction: row;
+  }
   &__label {
     color: $secondary-color;
-    margin-right: 15px;
-    font-size: rem(19);
+    font-size: rem(14);
+    @include tablet {
+      font-size: rem(17);
+    }
+    @include desktop {
+      padding-top: 32px;
+      padding-right: 15px;
+      font-size: rem(19);
+    }
   }
   &__input {
     background-color: $background-color;
     border: 2px solid $main-color;
     padding: 4px;
-    width: 160px;
+    width: 60%;
     margin-top: 5px;
-    margin-bottom: 15px;
     color: rgb(87, 219, 245);
     @include tablet {
-      margin-top: 15px;
-      padding: 10px;
-      width: 330px;
+      padding: 8px;
+      width: 89%;
+      margin-bottom: 15px;
+      margin-right: 5px;
     }
     @include desktop {
-      padding: 10px;
-      width: 450px;
+      margin-top: 26px;
+      padding: 8px;
+      width: 90%;
+      height: 25%;
     }
   }
 }

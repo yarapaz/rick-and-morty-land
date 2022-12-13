@@ -3,19 +3,36 @@
 @import '../core/mixins';
 
 .origin {
+  margin-top: 10px;
+  @include tablet {
+    margin-top: 20px;
+  }
   &__box {
     display: grid;
     grid-template-columns: auto auto;
     margin: 10px 10px 10px 35px;
-    gap: 10px;
+    gap: 0px;
+    @include tablet {
+      margin-left: 20px;
+      margin-right: 5px;
+      gap: 10px;
+    }
   }
   &__label {
     color: $secondary-color;
-    width: 100px;
-    margin-left: 5px;
+    width: 110px;
+    text-align: left;
+    margin-left: 0px;
+    @include tablet {
+      width: 100px;
+    }
   }
   &__checkbox {
     accent-color: $main-color;
+    width: 15px;
     cursor: pointer;
+    @include tablet {
+      width: 10px;
+    }
   }
 }

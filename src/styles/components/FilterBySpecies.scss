@@ -5,17 +5,32 @@
 .species {
   width: 200px;
   height: 30px;
-  margin-top: 75px;
-  margin-left: 20px;
+  margin-top: 20px;
   border: 2px dotted $main-color;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
+  @include tablet {
+    margin-top: 96px;
+    margin-left: 0px;
+  }
+  @include desktop {
+    margin-top: 84px;
+    margin-left: 20px;
+  }
   &__label {
     color: $secondary-color;
-    font-size: rem(18);
-    padding: 10px;
+    font-size: rem(14);
+    padding: 6px;
+    @include tablet {
+      padding: 3px;
+      font-size: rem(16);
+    }
+    @include desktop {
+      font-size: rem(18);
+      padding: 10px;
+    }
   }
   &__checkbox {
     accent-color: $main-color;
