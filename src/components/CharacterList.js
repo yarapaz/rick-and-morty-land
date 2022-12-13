@@ -1,8 +1,9 @@
 import CharacterCard from './CharacterCard';
 import '../styles/components/CharacterList.scss';
 import FilterError from './FilterError';
+import PropTypes from 'prop-types';
 
-function CharactersList({ charactersData, nameFilter }) {
+function CharacterList({ charactersData, nameFilter }) {
   const renderCharacterCards = () => {
     const filteredCharacters = charactersData.filter((eachCharacter) => {
       return eachCharacter.name
@@ -32,4 +33,9 @@ function CharactersList({ charactersData, nameFilter }) {
   return <section className='characters'>{renderCharacterCards()}</section>;
 }
 
-export default CharactersList;
+CharacterList.propTypes = {
+  charactersData: PropTypes.array.isRequired,
+  nameFilter: PropTypes.string,
+};
+
+export default CharacterList;

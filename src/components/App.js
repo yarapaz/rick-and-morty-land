@@ -11,7 +11,6 @@ function App() {
   //States
   const [charactersData, setCharactersData] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
-  console.log(charactersData);
 
   //Effects
   useEffect(() => {

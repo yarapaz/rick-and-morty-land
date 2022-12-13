@@ -1,5 +1,6 @@
 @import '../core/functions';
 @import '../core/variables';
+@import '../core/mixins';
 
 .character_detail {
   &__section {
@@ -10,37 +11,87 @@
   }
   &__card {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: rgb(19, 181, 213);
-    width: 800px;
-    height: 400px;
-    padding-left: 40px;
+    width: 280px;
+    padding: 15px 0px 20px 1px;
+    gap: 17px;
+    @include tablet {
+      flex-direction: row;
+      width: 600px;
+      height: 350px;
+      padding-left: 30px;
+    }
+    @include desktop {
+      width: 800px;
+      height: 400px;
+      padding-left: 40px;
+      padding-top: 0px;
+      gap: 0px;
+    }
   }
   &__link {
     margin-top: 15px;
     text-decoration: none;
     color: white;
-    font-size: rem(25);
+    font-size: rem(18);
     position: relative;
-    left: 19%;
-    margin-bottom: 20px;
+    left: 32.5%;
+    margin-bottom: 12px;
+    @include tablet {
+      font-size: rem(20);
+      left: 34.5%;
+    }
+    @include desktop {
+      font-size: rem(25);
+      left: 19%;
+      margin-bottom: 20px;
+    }
   }
   &__img {
-    width: 320px;
-    height: 320px;
+    width: 250px;
+    height: 250px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include tablet {
+      width: 300px;
+      height: 300px;
+    }
+    @include desktop {
+      width: 320px;
+      height: 320px;
+    }
   }
   &__box {
-    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include tablet {
+      padding-left: 20px;
+      padding-right: 0px;
+    }
+    @include desktop {
+      margin-left: 40px;
+    }
   }
   &__name {
     color: white;
-    font-size: rem(24);
+    font-size: rem(20);
     font-weight: 800;
     margin-bottom: 10px;
+    @include tablet {
+      font-size: rem(22);
+    }
+    @include desktop {
+      font-size: rem(24);
+    }
   }
   &__info {
     display: flex;
@@ -55,6 +106,13 @@
 }
 
 .fa-angle-left {
-  font-size: rem(18);
+  font-size: rem(10);
   transform: scale(0.8);
+  @include tablet {
+    font-size: rem(15);
+  }
+  @include desktop {
+    font-size: rem(18);
+    transform: scale(0.8);
+  }
 }

@@ -1,4 +1,5 @@
 import FilterByName from './FilterByName';
+import PropTypes from 'prop-types';
 import '../styles/core/page.scss';
 
 function Filters(props) {
@@ -15,5 +16,10 @@ function Filters(props) {
     </form>
   );
 }
+
+Filters.propTypes = {
+  handleFilterName: PropTypes.func.isRequired,
+  nameFilter: PropTypes.string,
+};
 
 export default Filters;

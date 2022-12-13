@@ -1,10 +1,19 @@
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
+import PropTypes from 'prop-types';
 
 function CharacterDetail({ handleFoundCharacter }) {
   const params = useParams();
   const foundCharacter = handleFoundCharacter(params.characterId);
+
+  const species = () => {
+    if (foundCharacter.species === 'Human') {
+      return <i class='fa-solid fa-person'></i>;
+    } else if (foundCharacter.species === 'Alien') {
+      return <i class='fa-brands fa-reddit-alien'></i>;
+    }
+  };
 
   if (foundCharacter !== undefined) {
     return (
@@ -22,14 +31,16 @@ function CharacterDetail({ handleFoundCharacter }) {
             <div className='character_detail__info'>
               <p className='character_detail__title'>Status:</p>
               <p className='character_detail__description'>
-                {foundCharacter.status}
+                {foundCharacter.status === 'Dead' ? (
+                  <i class='fa-solid fa-skull-crossbones'></i>
+                ) : (
+                  foundCharacter.status
+                )}
               </p>
             </div>
             <div className='character_detail__info'>
               <p className='character_detail__title'>Species:</p>
-              <p className='character_detail__description'>
-                {foundCharacter.species}
-              </p>
+              <p className='character_detail__description'>{species()}</p>
             </div>
             <div className='character_detail__info'>
               <p className='character_detail__title'>Origin:</p>
@@ -49,5 +60,9 @@ function CharacterDetail({ handleFoundCharacter }) {
     );
   }
 }
+
+CharacterDetail.propTypes = {
+  handleFoundCharacter: PropTypes.func.isRequired,
+};
 
 export default CharacterDetail;
