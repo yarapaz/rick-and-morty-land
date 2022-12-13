@@ -4,10 +4,17 @@
   width: 100%;
   min-height: 100vh;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
   background-color: black;
+  border: 3px outset rgba(19, 181, 213, 0.7);
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 50%;
 }

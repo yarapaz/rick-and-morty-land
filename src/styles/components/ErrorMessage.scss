@@ -1,0 +1,44 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  font-size: rem(15);
+  @include tablet {
+    font-size: rem(20);
+  }
+  @include desktop {
+    font-size: rem(25);
+  }
+  &__message {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+  }
+  &__link {
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(19, 181, 213);
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgb(89, 209, 233);
+    }
+    @include tablet {
+      width: 250px;
+      padding: 10px;
+    }
+    @include desktop {
+      width: 300px;
+      padding: 13px;
+    }
+  }
+}

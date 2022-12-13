@@ -1,0 +1,22 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.species {
+  width: 200px;
+  height: 30px;
+  margin-top: 1px;
+  margin-left: 10px;
+  border: 2px dotted rgba(19, 181, 213, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__label {
+    color: white;
+    font-size: rem(18);
+    padding: 10px;
+  }
+  &__checkbox {
+    cursor: pointer;
+  }
+}

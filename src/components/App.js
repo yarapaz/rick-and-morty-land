@@ -11,6 +11,8 @@ function App() {
   //States
   const [charactersData, setCharactersData] = useState([]);
   const [nameFilter, setNameFilter] = useState('');
+  const [speciesFilter, setSpeciesFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('');
 
   //Effects
   useEffect(() => {
@@ -22,10 +24,39 @@ function App() {
     setNameFilter(name);
   };
 
+  const handleFilterSpecies = (species) => {
+    setSpeciesFilter(species);
+  };
+
+  const handleFilterStatus = (status) => {
+    setStatusFilter(status);
+  };
+
   const handleFoundCharacter = (id) => {
     return charactersData.find(
       (eachCharacter) => eachCharacter.id === parseInt(id)
     );
+  };
+
+  const getFilteredCharacters = () => {
+    return charactersData
+      .filter((eachCharacter) => {
+        return eachCharacter.name
+          .toLowerCase()
+          .includes(nameFilter.toLowerCase());
+      })
+      .filter((eachCharacter) => {
+        return eachCharacter.species.toLowerCase().includes(speciesFilter);
+      })
+      .filter((eachCharacter) => {
+        if (statusFilter === 'all') {
+          return true;
+        } else {
+          return eachCharacter.status
+            .toLowerCase()
+            .includes(statusFilter.toLowerCase());
+        }
+      });
   };
 
   return (
@@ -40,11 +71,13 @@ function App() {
                 <Filters
                   handleFilterName={handleFilterName}
                   nameFilter={nameFilter}
-                />
-                <CharacterList
+                  handleFilterSpecies={handleFilterSpecies}
+                  speciesFilter={speciesFilter}
                   charactersData={charactersData}
-                  nameFilter={nameFilter}
+                  handleFilterStatus={handleFilterStatus}
+                  statusFilter={statusFilter}
                 />
+                <CharacterList getFilteredCharacters={getFilteredCharacters} />
               </>
             }
           ></Route>

@@ -7,8 +7,11 @@ function FilterByName(props) {
   };
 
   return (
-    <>
-      <label htmlFor='name' hidden></label>
+    <fieldset>
+      <legend hidden></legend>
+      <label className='name__label' htmlFor='name'>
+        Name
+      </label>
       <input
         type='text'
         name='name'
@@ -17,7 +20,7 @@ function FilterByName(props) {
         value={props.nameFilter}
         onChange={handleName}
       />
-    </>
+    </fieldset>
   );
 }
 

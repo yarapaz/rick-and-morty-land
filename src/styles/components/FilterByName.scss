@@ -2,20 +2,28 @@
 @import '../core/variables';
 @import '../core/mixins';
 
-.name__input {
-  background-color: black;
-  border: 2px solid rgb(19, 181, 213);
-  padding: 4px;
-  width: 160px;
-  margin-top: 5px;
-  color: white;
-  @include tablet {
-    margin-top: 15px;
-    padding: 10px;
-    width: 330px;
+.name {
+  &__input {
+    background-color: black;
+    border: 2px solid rgb(19, 181, 213);
+    padding: 4px;
+    width: 160px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: white;
+    @include tablet {
+      margin-top: 15px;
+      padding: 10px;
+      width: 330px;
+    }
+    @include desktop {
+      padding: 10px;
+      width: 450px;
+    }
   }
-  @include desktop {
-    padding: 10px;
-    width: 450px;
+  &__label {
+    color: white;
+    margin-right: 10px;
+    font-size: rem(18);
   }
 }

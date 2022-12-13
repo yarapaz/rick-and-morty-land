@@ -1,18 +1,14 @@
 import CharacterCard from './CharacterCard';
 import '../styles/components/CharacterList.scss';
-import FilterError from './FilterError';
+import NotFoundCharacter from './NotFoundCharacter';
 import PropTypes from 'prop-types';
 
-function CharacterList({ charactersData, nameFilter }) {
-  const renderCharacterCards = () => {
-    const filteredCharacters = charactersData.filter((eachCharacter) => {
-      return eachCharacter.name
-        .toLowerCase()
-        .includes(nameFilter.toLowerCase());
-    });
+function CharacterList({ getFilteredCharacters }) {
+  const renderCharacters = () => {
+    const filteredCharacters = getFilteredCharacters();
 
     if (filteredCharacters.length === 0) {
-      return <FilterError />;
+      return <NotFoundCharacter />;
     } else {
       const characters = filteredCharacters
         .sort((firstName, secondName) =>
@@ -30,12 +26,11 @@ function CharacterList({ charactersData, nameFilter }) {
     }
   };
 
-  return <section className='characters'>{renderCharacterCards()}</section>;
+  return <section className='characters'>{renderCharacters()}</section>;
 }
 
 CharacterList.propTypes = {
-  charactersData: PropTypes.array.isRequired,
-  nameFilter: PropTypes.string,
+  getFilteredCharacters: PropTypes.func.isRequired,
 };
 
 export default CharacterList;

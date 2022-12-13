@@ -2,10 +2,12 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 import PropTypes from 'prop-types';
+import NotFoundCharacter from './NotFoundCharacter';
 
 function CharacterDetail({ handleFoundCharacter }) {
   const params = useParams();
   const foundCharacter = handleFoundCharacter(params.characterId);
+  console.log(foundCharacter);
 
   const species = () => {
     if (foundCharacter.species === 'Human') {
@@ -14,7 +16,6 @@ function CharacterDetail({ handleFoundCharacter }) {
       return <i class='fa-brands fa-reddit-alien'></i>;
     }
   };
-
   if (foundCharacter !== undefined) {
     return (
       <section className='character_detail__section'>
@@ -58,6 +59,8 @@ function CharacterDetail({ handleFoundCharacter }) {
         </article>
       </section>
     );
+  } else {
+    return <NotFoundCharacter />;
   }
 }
 
