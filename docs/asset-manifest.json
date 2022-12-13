@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "./static/css/main.cb2ab1b1.css",
-    "main.js": "./static/js/main.386ac408.js",
+    "main.js": "./static/js/main.d9ef19de.js",
     "static/media/Rick-And-Morty-Logo.png": "./static/media/Rick-And-Morty-Logo.de3062ed18fb4232c53c.png",
     "index.html": "./index.html",
     "main.cb2ab1b1.css.map": "./static/css/main.cb2ab1b1.css.map",
-    "main.386ac408.js.map": "./static/js/main.386ac408.js.map"
+    "main.d9ef19de.js.map": "./static/js/main.d9ef19de.js.map"
   },
   "entrypoints": [
     "static/css/main.cb2ab1b1.css",
-    "static/js/main.386ac408.js"
+    "static/js/main.d9ef19de.js"
   ]
 }
