@@ -4,7 +4,7 @@
 
 Welcome to the **Rick and Morty Land website**, the only dimension where you will be able to travel all around Rick and Morty's universe characters with just one click.
 
-Mocked up and developped with **HTML, Sass and React JS** Rick and Morty Land will allow you to search whoever you want whenever you want just by clicking on the Github Pages link attached above in the description.
+Mocked up and developped with **HTML, Sass and React JS** Rick and Morty Land fetches the first 20 characters from Rick and Morty's API (https://rickandmortyapi.com/documentation/#get-all-characters) and throws them into your computer allowing you to search whoever you want whenever you want just by clicking on the Github Pages link attached above in the description.
 
 ## Find your favorite characters
 
