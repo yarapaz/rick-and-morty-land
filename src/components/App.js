@@ -7,6 +7,7 @@ import Header from './Header';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import Loader from './Loader';
 
 function App() {
   //Local Storage
@@ -23,6 +24,7 @@ function App() {
   const [speciesFilter, setSpeciesFilter] = useState(lsInfo.species);
   const [statusFilter, setStatusFilter] = useState(lsInfo.status);
   const [originFilter, setOriginFilter] = useState(lsInfo.origin);
+  const [isLoading, setIsLoading] = useState(false);
   const [savedData, setSavedData] = useState({
     name: '',
     species: '',
@@ -32,7 +34,11 @@ function App() {
 
   //Effects
   useEffect(() => {
-    callToApi().then((characters) => setCharactersData(characters));
+    setIsLoading(true);
+    callToApi().then((characters) => {
+      setCharactersData(characters);
+      setIsLoading(false);
+    });
   }, []);
 
   //Handlers
@@ -119,6 +125,7 @@ function App() {
     <>
       <Header />
       <main className='main'>
+        <Loader isLoading={isLoading} />
         <Routes>
           <Route
             path='/'

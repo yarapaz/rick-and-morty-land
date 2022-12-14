@@ -10,7 +10,7 @@ Mocked up and developped with **HTML, Sass and React JS** Rick and Morty Land fe
 
 ![Rick and Morty Land filters and Reset button](./docs/static/media/rickMorty1.jpg)
 
-Thanks to the filters above Rick and Morty Land allows you to look for your favorite characters following this criteria:
+Thanks to the filters above, Rick and Morty Land allows you to look for your favorite characters following the subsequent criteria:
 
 - **Name**: no matter if you write it in lowercase or uppercase your search will always be a success. However, if you look for a non existing character, you will get an error message back to warn you.
 
@@ -18,7 +18,7 @@ Thanks to the filters above Rick and Morty Land allows you to look for your favo
 
 - **Species**: choosing between the two existing species: humans or aliens.
 
-- **Status**: select the status of your characters among all the options on the list.
+- **Status**: select the status of your characters among all the options available on the list.
 
 - **Origin**: check as many origins as you want to find all the characters you wish.
 
@@ -36,11 +36,11 @@ Once you have found all your favorite characters you will be able to access thei
 
 Moreover, if you want to share their information with your colleagues just by copying the url above you will be able to share your favorite character details with everybody.
 
+Go back to the main page just by clicking on the "Go back" button above.
+
 Nevertheless, be careful. If you change the url looking for a non existing character you will get another error message back warning you.
 
 ![Rick and Morty Land not found character error message](./docs/static/media/rickMorty5.jpg)
-
-Go back to the main page just by clicking on the "Go back" button above.
 
 ## Thanks for visiting my universe!
 

@@ -10,9 +10,9 @@ function CharacterDetail({ handleFoundCharacter }) {
 
   const species = () => {
     if (foundCharacter.species === 'Human') {
-      return <i class='fa-solid fa-person'></i>;
+      return <i className='fa-solid fa-person'></i>;
     } else if (foundCharacter.species === 'Alien') {
-      return <i class='fa-brands fa-reddit-alien'></i>;
+      return <i className='fa-brands fa-reddit-alien'></i>;
     }
   };
 
@@ -20,7 +20,7 @@ function CharacterDetail({ handleFoundCharacter }) {
     return (
       <section className='character_detail__section'>
         <Link className='character_detail__link' to='/'>
-          <i class='fa-solid fa-angle-left'></i> Go back
+          <i className='fa-solid fa-angle-left'></i> Go back
         </Link>
         <article className='character_detail__card'>
           <div
@@ -33,7 +33,7 @@ function CharacterDetail({ handleFoundCharacter }) {
               <p className='character_detail__title'>Status:</p>
               <p className='character_detail__description'>
                 {foundCharacter.status === 'Dead' ? (
-                  <i class='fa-solid fa-skull-crossbones'></i>
+                  <i className='fa-solid fa-skull-crossbones'></i>
                 ) : (
                   foundCharacter.status
                 )}

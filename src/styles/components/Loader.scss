@@ -1,0 +1,48 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.loader {
+  position: fixed;
+  top: 4%;
+  left: 2%;
+  display: block;
+  width: 1000px;
+  height: 1000px;
+  border: 0.25rem solid $main-color;
+  border-radius: 50%;
+  animation-name: beat;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+@keyframes beat {
+  0% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  20% {
+    width: 2rem;
+    height: 2rem;
+  }
+  40% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  60% {
+    width: 2rem;
+    height: 2rem;
+  }
+  80% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  100% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
