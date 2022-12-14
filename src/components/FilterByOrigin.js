@@ -44,6 +44,7 @@ function FilterByOrigin(props) {
 
 FilterByOrigin.propTypes = {
   handleFilterOrigin: PropTypes.func.isRequired,
+  originFilter: PropTypes.array,
   charactersData: PropTypes.array.isRequired,
 };
 

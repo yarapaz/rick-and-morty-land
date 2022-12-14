@@ -44,6 +44,7 @@ function FilterByStatus(props) {
 FilterByStatus.propTypes = {
   handleFilterStatus: PropTypes.func.isRequired,
   charactersData: PropTypes.array.isRequired,
+  statusFilter: PropTypes.string,
 };
 
 export default FilterByStatus;

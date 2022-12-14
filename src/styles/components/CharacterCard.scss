@@ -8,17 +8,19 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    gap: 13px;
+    gap: 10px;
     background-color: $main-color;
     color: $secondary-color;
     font-size: rem(9);
+    border-radius: 10px;
+    box-shadow: 2px 3px 30px 3px #0ff;
     @include tablet {
-      width: 200px;
-      font-size: rem(16);
+      width: 210px;
+      font-size: rem(13);
     }
     @include desktop {
       width: 250px;
-      font-size: rem(19);
+      font-size: rem(15);
     }
   }
   &__link {
@@ -26,34 +28,41 @@
   }
   &__img {
     width: 100%;
-    height: 140px;
+    height: 130px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 10px;
     @include tablet {
-      height: 200px;
+      height: 220px;
     }
     @include desktop {
-      height: 250px;
+      height: 270px;
     }
   }
   &__name {
-    margin-left: 10px;
+    margin-left: 6px;
     font-weight: 800;
     @include tablet {
-      margin-left: 9px;
+      padding-top: 3px;
+      margin-left: 10px;
     }
     @include desktop {
       margin-left: 20px;
+      padding-top: 5px;
     }
   }
   &__species {
-    margin-left: 10px;
+    margin-left: 6px;
     padding-bottom: 10px;
     @include tablet {
-      margin-left: 9px;
+      padding-top: 3px;
+      margin-bottom: 5px;
+      margin-left: 10px;
     }
     @include desktop {
+      padding-top: 5px;
+      margin-bottom: 8px;
       margin-left: 20px;
     }
   }

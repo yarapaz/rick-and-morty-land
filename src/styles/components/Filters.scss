@@ -1,0 +1,33 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.form {
+  background-color: $background-color;
+  border: 3px outset $main-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  font-size: rem(18);
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 2px 3px 30px 3px #0ff;
+  @include tablet {
+    width: 76%;
+  }
+  @include desktop {
+    width: 65%;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+    @include desktop {
+      gap: 10px;
+    }
+  }
+}

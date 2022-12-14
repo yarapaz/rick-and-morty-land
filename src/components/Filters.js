@@ -1,6 +1,6 @@
-import FilterByName from './FilterByName';
 import PropTypes from 'prop-types';
-import '../styles/core/page.scss';
+import '../styles/components/Filters.scss';
+import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
 import FilterByStatus from './FilterByStatus';
 import FilterByOrigin from './FilterByOrigin';
@@ -50,6 +50,7 @@ Filters.propTypes = {
   charactersData: PropTypes.array.isRequired,
   handleFilterStatus: PropTypes.func.isRequired,
   statusFilter: PropTypes.string,
+  handleFilterOrigin: PropTypes.func.isRequired,
   originFilter: PropTypes.array,
   handleReset: PropTypes.func,
 };

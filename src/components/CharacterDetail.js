@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import '../styles/components/CharacterDetail.scss';
 import PropTypes from 'prop-types';
+import '../styles/components/CharacterDetail.scss';
 import NotFoundCharacter from './NotFoundCharacter';
 
 function CharacterDetail({ handleFoundCharacter }) {
@@ -15,11 +15,12 @@ function CharacterDetail({ handleFoundCharacter }) {
       return <i class='fa-brands fa-reddit-alien'></i>;
     }
   };
+
   if (foundCharacter !== undefined) {
     return (
       <section className='character_detail__section'>
         <Link className='character_detail__link' to='/'>
-          <i class='fa-solid fa-angle-left'></i> Volver
+          <i class='fa-solid fa-angle-left'></i> Go back
         </Link>
         <article className='character_detail__card'>
           <div

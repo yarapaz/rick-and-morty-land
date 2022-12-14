@@ -1,11 +1,14 @@
-import '../styles/components/CharacterCard.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../styles/components/CharacterCard.scss';
 
 function CharacterCard({ eachCharacter }) {
   return (
     <li key={eachCharacter.id}>
-      <Link className='character__link' to={`/characters/${eachCharacter.id}`}>
+      <NavLink
+        className='character__link'
+        to={`/characters/${eachCharacter.id}`}
+      >
         <article className='character__card'>
           <div
             className='character__img'
@@ -14,12 +17,12 @@ function CharacterCard({ eachCharacter }) {
           <h2 className='character__name'>{eachCharacter.name}</h2>
           <h3 className='character__species'>{eachCharacter.species}</h3>
         </article>
-      </Link>
+      </NavLink>
     </li>
   );
 }
 
-CharacterCard.propypes = {
+CharacterCard.propTypes = {
   eachCharacter: PropTypes.object,
 };
 

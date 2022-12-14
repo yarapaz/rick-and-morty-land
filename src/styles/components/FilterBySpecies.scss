@@ -5,14 +5,14 @@
 .species {
   width: 200px;
   height: 30px;
-  margin-top: 20px;
+  margin-top: 15px;
   border: 2px dotted $main-color;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3px;
   @include tablet {
-    margin-top: 96px;
+    margin-top: 71.5px;
     margin-left: 0px;
   }
   @include desktop {

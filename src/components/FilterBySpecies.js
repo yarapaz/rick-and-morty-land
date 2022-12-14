@@ -1,5 +1,5 @@
-import '../styles/components/FilterBySpecies.scss';
 import PropTypes from 'prop-types';
+import '../styles/components/FilterBySpecies.scss';
 
 function FilterBySpecies(props) {
   const handleSpecies = (ev) => {

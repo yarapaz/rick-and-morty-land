@@ -1,12 +1,12 @@
-import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import '../styles/App.scss';
 import callToApi from '../services/api';
+import ls from '../services/localStorage';
 import Header from './Header';
 import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import ls from '../services/localStorage';
 
 function App() {
   //Local Storage
@@ -88,6 +88,7 @@ function App() {
     setOriginFilter([]);
   };
 
+  //Filters
   const getFilteredCharacters = () => {
     return charactersData
       .filter((eachCharacter) => {
@@ -102,9 +103,7 @@ function App() {
         if (statusFilter === 'all') {
           return true;
         } else {
-          return eachCharacter.status
-            .toLowerCase()
-            .includes(statusFilter.toLowerCase());
+          return eachCharacter.status.includes(statusFilter);
         }
       })
       .filter((eachCharacter) => {

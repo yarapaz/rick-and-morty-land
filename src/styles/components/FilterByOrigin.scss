@@ -4,6 +4,7 @@
 
 .origin {
   margin-top: 10px;
+  font-size: rem(13);
   @include tablet {
     margin-top: 20px;
   }
@@ -23,8 +24,10 @@
     width: 110px;
     text-align: left;
     margin-left: 0px;
+    font-size: rem(12);
     @include tablet {
       width: 100px;
+      font-size: rem(15);
     }
   }
   &__checkbox {

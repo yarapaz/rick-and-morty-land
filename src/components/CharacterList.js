@@ -1,14 +1,14 @@
-import CharacterCard from './CharacterCard';
-import '../styles/components/CharacterList.scss';
-import NotFoundCharacter from './NotFoundCharacter';
 import PropTypes from 'prop-types';
+import '../styles/components/CharacterList.scss';
+import CharacterCard from './CharacterCard';
+import FilterError from './FilterError';
 
 function CharacterList({ getFilteredCharacters }) {
   const renderCharacters = () => {
     const filteredCharacters = getFilteredCharacters();
 
     if (filteredCharacters.length === 0) {
-      return <NotFoundCharacter />;
+      return <FilterError />;
     } else {
       const characters = filteredCharacters
         .sort((firstName, secondName) =>
@@ -22,7 +22,11 @@ function CharacterList({ getFilteredCharacters }) {
             />
           );
         });
-      return <ul className='characters__list'>{characters}</ul>;
+      return (
+        <nav>
+          <ul className='characters__list'>{characters}</ul>
+        </nav>
+      );
     }
   };
 

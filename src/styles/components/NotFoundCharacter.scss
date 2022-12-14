@@ -1,0 +1,47 @@
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  font-size: rem(15);
+  @include tablet {
+    font-size: rem(20);
+  }
+  @include desktop {
+    font-size: rem(25);
+  }
+  &__message {
+    color: $secondary-color;
+    text-align: center;
+    padding-top: 50px;
+  }
+  &__link {
+    align-items: center;
+    text-decoration: none;
+    color: $secondary-color;
+    background-color: $main-color;
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 7px;
+    &:hover {
+      background-color: $main-color;
+    }
+    @include tablet {
+      width: 250px;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    @include desktop {
+      margin-top: 25px;
+      width: 350px;
+      padding: 16px;
+    }
+  }
+}

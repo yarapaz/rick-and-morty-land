@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../images/Rick-And-Morty-Logo.png';
 import '../styles/components/Header.scss';
+import logo from '../images/Rick-And-Morty-Logo.png';
 
 function Header() {
   return (

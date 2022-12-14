@@ -17,18 +17,20 @@
     background-color: $main-color;
     width: 280px;
     padding: 15px 0px 20px 1px;
-    gap: 17px;
+    gap: 20px;
+    box-shadow: 2px 3px 30px 3px #0ff;
     @include tablet {
       flex-direction: row;
       width: 600px;
       height: 350px;
+      padding-top: 17px;
       padding-left: 30px;
     }
     @include desktop {
       width: 800px;
       height: 400px;
       padding-left: 40px;
-      padding-top: 0px;
+      padding-top: 20px;
       gap: 0px;
     }
   }
@@ -38,15 +40,16 @@
     color: $secondary-color;
     font-size: rem(18);
     position: relative;
-    left: 32.5%;
+    left: 34.5%;
     margin-bottom: 12px;
+    cursor: pointer;
     @include tablet {
       font-size: rem(20);
-      left: 34.5%;
+      left: 42%;
     }
     @include desktop {
-      font-size: rem(25);
-      left: 19%;
+      font-size: rem(23);
+      left: 43%;
       margin-bottom: 20px;
     }
   }

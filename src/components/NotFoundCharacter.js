@@ -1,17 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import '../styles/components/ErrorMessage.scss';
+import '../styles/components/NotFoundCharacter.scss';
 
-function FilterError() {
+function NotFoundCharacter() {
   return (
-    <section className='error'>
+    <article className='error'>
       <p className='error__message'>
-        Creo que el personaje que buscas no existe
+        Oops! The character you are looking for doesn't exist. Try again!
       </p>
       <NavLink to='/' className='error__link'>
-        Volver a lista de personajes
+        Go back to character list
       </NavLink>
-    </section>
+    </article>
   );
 }
 
-export default FilterError;
+export default NotFoundCharacter;

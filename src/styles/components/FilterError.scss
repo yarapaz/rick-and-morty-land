@@ -21,24 +21,4 @@
     text-align: center;
     padding-top: 50px;
   }
-  &__link {
-    align-items: center;
-    text-decoration: none;
-    color: $secondary-color;
-    background-color: $main-color;
-    width: 200px;
-    padding: 5px;
-    border-radius: 5px;
-    &:hover {
-      background-color: $main-color;
-    }
-    @include tablet {
-      width: 250px;
-      padding: 10px;
-    }
-    @include desktop {
-      width: 300px;
-      padding: 13px;
-    }
-  }
 }
