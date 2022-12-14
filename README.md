@@ -40,7 +40,7 @@ Nevertheless, be careful. If you change the url looking for a non existing chara
 
 ![Rick and Morty Land not found character error message](./docs/static/media/rickMorty5.jpg)
 
-Go back to the main page just by clicking on the "Volver" button above.
+Go back to the main page just by clicking on the "Go back" button above.
 
 ## Thanks for visiting my universe!
 
