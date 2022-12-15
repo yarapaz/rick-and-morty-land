@@ -10,10 +10,12 @@ const callToApi = () => {
           species: eachCharacter.species,
           status: eachCharacter.status,
           origin: eachCharacter.origin.name,
+          location: eachCharacter.location.name,
           episodes: eachCharacter.episode.length,
         };
         return character;
       });
+      console.log(characters);
       return characters;
     })
     .catch((error) => console.log(`An error ${error} has occurred`));

@@ -4,6 +4,7 @@ import FilterByName from './FilterByName';
 import FilterBySpecies from './FilterBySpecies';
 import FilterByStatus from './FilterByStatus';
 import FilterByOrigin from './FilterByOrigin';
+import FilterInOrigin from './FilterInOrigin';
 import Reset from './Reset';
 
 function Filters(props) {
@@ -35,6 +36,10 @@ function Filters(props) {
           charactersData={props.charactersData}
           handleFilterOrigin={props.handleFilterOrigin}
           originFilter={props.originFilter}
+        />
+        <FilterInOrigin
+          handleFilterInOrigin={props.handleFilterInOrigin}
+          inOriginFilter={props.inOriginFilter}
         />
       </div>
       <Reset handleReset={handleReset} />

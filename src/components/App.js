@@ -24,6 +24,7 @@ function App() {
   const [speciesFilter, setSpeciesFilter] = useState(lsInfo.species);
   const [statusFilter, setStatusFilter] = useState(lsInfo.status);
   const [originFilter, setOriginFilter] = useState(lsInfo.origin);
+  const [inOriginFilter, setInOriginFilter] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [savedData, setSavedData] = useState({
     name: '',
@@ -80,6 +81,10 @@ function App() {
     }
   };
 
+  const handleFilterInOrigin = (checked) => {
+    setInOriginFilter(checked);
+  };
+
   const handleFoundCharacter = (id) => {
     return charactersData.find(
       (eachCharacter) => eachCharacter.id === parseInt(id)
@@ -118,6 +123,13 @@ function App() {
         } else {
           return originFilter.includes(eachCharacter.origin);
         }
+      })
+      .filter((eachCharacter) => {
+        if (inOriginFilter) {
+          return eachCharacter.origin === eachCharacter.location;
+        } else {
+          return true;
+        }
       });
   };
 
@@ -142,6 +154,8 @@ function App() {
                   handleFilterOrigin={handleFilterOrigin}
                   originFilter={originFilter}
                   handleReset={handleReset}
+                  handleFilterInOrigin={handleFilterInOrigin}
+                  inOriginFilter={inOriginFilter}
                 />
                 <CharacterList getFilteredCharacters={getFilteredCharacters} />
               </>
