@@ -8,6 +8,8 @@ import CharacterDetail from './CharacterDetail';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import Loader from './Loader';
+import PageNotFound from './PageNotFound';
+import Stars from './Stars';
 
 function App() {
   //Local Storage
@@ -135,7 +137,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Stars />
       <main className='main'>
         <Loader isLoading={isLoading} />
         <Routes>
@@ -143,6 +145,7 @@ function App() {
             path='/'
             element={
               <>
+                <Header />
                 <Filters
                   handleFilterName={handleFilterName}
                   nameFilter={nameFilter}
@@ -164,9 +167,13 @@ function App() {
           <Route
             path='/characters/:characterId'
             element={
-              <CharacterDetail handleFoundCharacter={handleFoundCharacter} />
+              <>
+                <Header />
+                <CharacterDetail handleFoundCharacter={handleFoundCharacter} />
+              </>
             }
           ></Route>
+          <Route path='*' element={<PageNotFound />}></Route>
         </Routes>
       </main>
     </>

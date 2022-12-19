@@ -1,0 +1,45 @@
+@import '../core/keyframes';
+
+$count: 500;
+
+// html {
+//   font-size: 10px;
+// }
+
+// body {
+//   background: linear-gradient(180deg, #000000, #000033);
+//   height: 100vh;
+// }
+
+.container {
+  width: 100%;
+  perspective: 120rem;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100%;
+  position: absolute;
+}
+
+.p {
+  animation-name: flicker;
+  animation-timing-function: ease(in-out-circ);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  background: #fff;
+  border-radius: 50%; //stars aren't round!
+  position: absolute;
+  opacity: 1; //star flicker - base value;
+}
+
+@for $i from 1 through $count {
+  $size: random(5) * 0.05rem;
+
+  .p:nth-child(#{$i}) {
+    animation-delay: random(10) / random(9) + 0s;
+    animation-duration: random(4) / random(3) + 0s;
+    left: random(100) + 0vw;
+    top: random(100) + 0vh;
+    height: $size;
+    width: $size;
+  }
+}

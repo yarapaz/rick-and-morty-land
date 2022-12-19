@@ -2,11 +2,11 @@
 @import '../core/variables';
 @import '../core/mixins';
 
-.origin {
+.inOrigin {
   margin-top: 10px;
   font-size: rem(13);
   @include tablet {
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 10px;
   }
   &__box {
