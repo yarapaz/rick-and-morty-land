@@ -1,4 +1,4 @@
-![Rick and Morty Land](./docs/static/media/rick-and-morty-website-1.png)
+![Rick and Morty Land](./docs/static/media/Rick-And-Morty-Logo.de3062ed18fb4232c53c.png)
 
 # Welcome to Rick and Morty Land, Lad!
 
