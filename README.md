@@ -1,4 +1,4 @@
-![Rick and Morty Land](./docs/static/media/rickAndMorty1.png)
+![Rick and Morty Land](./docs/static/media/rick-and-morty-website-1.png)
 
 # Welcome to Rick and Morty Land, Lad!
 
@@ -8,13 +8,13 @@ Mocked up and developped with **HTML, Sass and React JS** Rick and Morty Land fe
 
 ## Find your favorite characters
 
-![Rick and Morty Land filters and Reset button](./docs/static/media/rickMorty1.jpg)
+![Rick and Morty Land filters and Reset button](./docs/static/media/rick-and-morty-filters.jpg)
 
 Thanks to the filters above, Rick and Morty Land allows you to look for your favorite characters following the subsequent criteria:
 
 - **Name**: no matter if you write it in lowercase or uppercase your search will always be a success. However, if you look for a non existing character, you will get an error message back to warn you.
 
-![Rick and Morty Land filter error message](./docs/static/media/rickMorty2.jpg)
+![Rick and Morty Land filter error message](./docs/static/media/rick-and-morty-website-3.jpg)
 
 - **Species**: choosing between the two existing species: humans or aliens.
 
@@ -26,11 +26,11 @@ If you change your mind and you want to use no filter, just by clicking on the r
 
 Furthermore, if you wish to keep your search for the future, do not worry. The page is developed to store all filters information in your Local Storage so you can go back to your former search whenever you want.
 
-![Rick and Morty Land Local Storage](./docs/static/media/rickMorty3.jpg)
+![Rick and Morty Land Local Storage](./docs/static/media/rick-and-morty-ls.jpg)
 
 ## Check your favorite characters details
 
-![Rick and Morty Land character detail](./docs/static/media/rickMorty4.jpg)
+![Rick and Morty Land character detail](./docs/static/media/rick-and-morty-website-2.jpg)
 
 Once you have found all your favorite characters you will be able to access their character details just by clicking on their cards getting to know them better.
 
@@ -40,7 +40,7 @@ Go back to the main page just by clicking on the "Go back" button above.
 
 Nevertheless, be careful. If you change the url looking for a non existing character you will get another error message back warning you.
 
-![Rick and Morty Land not found character error message](./docs/static/media/rickMorty5.jpg)
+![Rick and Morty Land not found character error message](./docs/static/media/rick-and-morty-website-4.jpg)
 
 ## Thanks for visiting my universe!
 

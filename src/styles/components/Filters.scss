@@ -3,7 +3,7 @@
 @import '../core/mixins';
 
 .form {
-  background-color: $background-color;
+  background-color: rgba(19, 181, 213, 0.2);
   border: 3px outset $main-color;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
   font-size: rem(18);
   padding: 20px;
   margin-top: 15px;
-  box-shadow: 2px 3px 30px 3px #0ff;
+  margin-bottom: 30px;
   @include tablet {
     width: 76%;
   }

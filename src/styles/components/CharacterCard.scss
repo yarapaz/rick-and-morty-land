@@ -13,7 +13,7 @@
     color: $secondary-color;
     font-size: rem(9);
     border-radius: 10px;
-    box-shadow: 2px 3px 30px 3px #0ff;
+    box-shadow: 2px 3px 30px 3px $main-color;
     @include tablet {
       width: 210px;
       font-size: rem(13);
